@@ -1,0 +1,12 @@
+Packages used: Ar_track_alvar
+
+In order for the function to detect the center of the window, the launch file from ar_track_alvar with name 'pr2_indiv_no_kinect.launch'
+needs to be updated with following parameters
+        <arg name="marker_size" default="6" />  -                           Denotes the marker size to detect in cm.
+        <arg name="max_new_marker_error" default="0.08" />                  
+        <arg name="max_track_error" default="0.2" />
+        <arg name="cam_image_topic" default="/ardrone/front/image_raw" />   Image topic
+        <arg name="cam_info_topic" default="/ardrone/front/camera_info" />  Camera parameters are stored in this topic
+        <arg name="output_frame" default="/ardrone_base_link" />            The artag locations are determined wrt to baselink.
+        
+The code should be able to bradcast a constant transformation of window center wrt to base link which is visible in rviz.        
